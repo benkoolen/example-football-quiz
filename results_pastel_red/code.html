@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GoalQuiz - Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .font-headline {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#3f0204",
+                        "secondary-container": "#eae0e0",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#635d5d",
+                        "surface-bright": "#faf9f8",
+                        "surface-container": "#eeeeed",
+                        "surface-container-low": "#f4f3f2",
+                        "outline-variant": "#dbc1be",
+                        "surface-container-highest": "#e3e2e1",
+                        "on-tertiary-fixed": "#2a1617",
+                        "primary-container": "#f28b82",
+                        "primary-fixed": "#ffdad6",
+                        "outline": "#887270",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2f3130",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#98443e",
+                        "surface-container-high": "#e9e8e7",
+                        "on-tertiary-container": "#4f3737",
+                        "primary": "#98443e",
+                        "on-primary-fixed-variant": "#7a2e29",
+                        "surface-variant": "#e3e2e1",
+                        "secondary-fixed-dim": "#cdc4c4",
+                        "on-primary-container": "#6d2420",
+                        "on-surface": "#1a1c1c",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "tertiary-fixed-dim": "#e1bebe",
+                        "inverse-primary": "#ffb3ac",
+                        "on-secondary-fixed": "#1f1b1b",
+                        "tertiary": "#735858",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#4b4546",
+                        "inverse-on-surface": "#f1f0ef",
+                        "secondary-fixed": "#eae0e0",
+                        "tertiary-container": "#c1a0a0",
+                        "surface": "#faf9f8",
+                        "surface-dim": "#dadad9",
+                        "on-surface-variant": "#554240",
+                        "on-secondary-container": "#696363",
+                        "tertiary-fixed": "#ffdada",
+                        "on-tertiary-fixed-variant": "#594041",
+                        "background": "#faf9f8",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "lg": "40px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "gutter": "16px",
+                        "container-margin": "20px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Lexend"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Lexend"],
+                        "display-xl": ["Lexend"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "display-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 bg-surface z-50">
+<div class="flex justify-between items-center px-container-margin py-base w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<button class="p-xs text-primary active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-headline-md font-headline-md font-bold text-primary">GoalQuiz</h1>
+</div>
+<div class="flex items-center">
+<button class="p-xs text-primary active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-4xl mx-auto px-container-margin py-xl flex flex-col items-center">
+<!-- Results Hero Section -->
+<section class="w-full flex flex-col items-center mb-xl text-center">
+<!-- Score Circle -->
+<div class="relative mb-md">
+<div class="w-48 h-48 rounded-full bg-primary-container flex flex-col items-center justify-center shadow-md">
+<span class="text-display-xl font-display-xl text-on-primary-container">8/10</span>
+<span class="text-label-md font-label-md text-on-primary-container opacity-70">SCORE</span>
+</div>
+<!-- Decorative Badge -->
+<div class="absolute -bottom-2 -right-2 bg-primary text-on-primary rounded-full p-sm shadow-lg">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-primary mb-xs">Great Job!</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-md">You've mastered the Premier League trivia. Your football knowledge is impressive!</p>
+</section>
+<!-- Stats Bento Grid -->
+<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-gutter mb-xl">
+<!-- Correct Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-b-4 border-[#4CAF50] flex flex-col items-center">
+<span class="material-symbols-outlined mb-base" style="color: #4CAF50; font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-headline-md font-headline-md">8</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Correct</span>
+</div>
+<!-- Incorrect Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-b-4 border-error flex flex-col items-center">
+<span class="material-symbols-outlined text-error mb-base" style="font-variation-settings: 'FILL' 1;">cancel</span>
+<span class="text-headline-md font-headline-md">2</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Incorrect</span>
+</div>
+<!-- Time/Accuracy Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-b-4 border-primary flex flex-col items-center">
+<span class="material-symbols-outlined text-primary mb-base">timer</span>
+<span class="text-headline-md font-headline-md">04:12</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Time Spent</span>
+</div>
+</div>
+<!-- Detailed Breakdown -->
+<section class="w-full space-y-gutter mb-xl">
+<h3 class="text-headline-md font-headline-md text-on-surface px-base">Answer Breakdown</h3>
+<!-- Question Result Item 1 -->
+<div class="bg-white rounded-xl p-md border border-outline-variant flex items-start gap-md">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#E8F5E9] text-[#2E7D32] flex items-center justify-center">
+<span class="material-symbols-outlined">check</span>
+</div>
+<div class="flex-grow">
+<p class="font-bold text-on-surface mb-xs">Which player has the most Premier League goals?</p>
+<div class="flex flex-wrap gap-xs">
+<span class="text-label-sm font-label-sm px-sm py-xs bg-[#E8F5E9] text-[#2E7D32] rounded-full">Alan Shearer</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant py-xs italic">Correct choice</span>
+</div>
+</div>
+</div>
+<!-- Question Result Item 2 (Incorrect) -->
+<div class="bg-white rounded-xl p-md border border-outline-variant flex items-start gap-md">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-error-container text-error flex items-center justify-center">
+<span class="material-symbols-outlined">close</span>
+</div>
+<div class="flex-grow">
+<p class="font-bold text-on-surface mb-xs">Who won the Premier League title in the 2015/16 season?</p>
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-xs">
+<span class="text-label-sm font-label-sm px-sm py-xs bg-error-container text-error rounded-full">Arsenal</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant py-xs">Your answer</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="text-label-sm font-label-sm px-sm py-xs bg-secondary-container text-on-secondary-container rounded-full">Leicester City</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant py-xs">Correct answer</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<div class="w-full flex flex-col sm:flex-row gap-gutter">
+<button class="flex-1 min-h-[56px] bg-primary text-on-primary rounded-xl font-headline-md text-headline-md flex items-center justify-center gap-sm hover:opacity-90 active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined">replay</span>
+            Play Again
+        </button>
+<button class="flex-1 min-h-[56px] bg-secondary-container text-on-secondary-container rounded-xl font-headline-md text-headline-md flex items-center justify-center gap-sm hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined">home</span>
+            Home
+        </button>
+</div>
+</main>
+<!-- BottomNavBar (Visible on Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-xl px-gutter bg-surface pb-safe shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors p-xs rounded-lg" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:bg-surface-container transition-colors p-xs rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+<span class="text-label-sm font-label-sm">Leagues</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors p-xs rounded-lg" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-label-sm font-label-sm">Stats</span>
+</a>
+</nav>
+<!-- Spacer for Bottom Nav on Mobile -->
+<div class="h-xl md:hidden"></div>
+<!-- Achievement Toast Example -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-container-margin py-sm rounded-full flex items-center gap-sm shadow-lg z-[60]">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-label-md font-label-md">New Personal Best!</span>
+</div>
+</body></html>

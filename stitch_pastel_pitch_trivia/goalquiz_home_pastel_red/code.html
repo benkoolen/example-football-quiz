@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GoalQuiz - Home Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Lexend:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "error-container": "#ffdad6",
+                "on-secondary": "#ffffff",
+                "on-primary-fixed": "#3f0204",
+                "secondary-container": "#eae0e0",
+                "on-primary": "#ffffff",
+                "on-background": "#1a1c1c",
+                "secondary": "#635d5d",
+                "surface-bright": "#faf9f8",
+                "surface-container": "#eeeeed",
+                "surface-container-low": "#f4f3f2",
+                "outline-variant": "#dbc1be",
+                "surface-container-highest": "#e3e2e1",
+                "on-tertiary-fixed": "#2a1617",
+                "primary-container": "#f28b82",
+                "primary-fixed": "#ffdad6",
+                "outline": "#887270",
+                "on-error": "#ffffff",
+                "inverse-surface": "#2f3130",
+                "surface-container-lowest": "#ffffff",
+                "surface-tint": "#98443e",
+                "surface-container-high": "#e9e8e7",
+                "on-tertiary-container": "#4f3737",
+                "primary": "#98443e",
+                "on-primary-fixed-variant": "#7a2e29",
+                "surface-variant": "#e3e2e1",
+                "secondary-fixed-dim": "#cdc4c4",
+                "on-primary-container": "#6d2420",
+                "on-surface": "#1a1c1c",
+                "primary-fixed-dim": "#ffb3ac",
+                "tertiary-fixed-dim": "#e1bebe",
+                "inverse-primary": "#ffb3ac",
+                "on-secondary-fixed": "#1f1b1b",
+                "tertiary": "#735858",
+                "on-tertiary": "#ffffff",
+                "error": "#ba1a1a",
+                "on-secondary-fixed-variant": "#4b4546",
+                "inverse-on-surface": "#f1f0ef",
+                "secondary-fixed": "#eae0e0",
+                "tertiary-container": "#c1a0a0",
+                "surface": "#faf9f8",
+                "surface-dim": "#dadad9",
+                "on-surface-variant": "#554240",
+                "on-secondary-container": "#696363",
+                "tertiary-fixed": "#ffdada",
+                "on-tertiary-fixed-variant": "#594041",
+                "background": "#faf9f8",
+                "on-error-container": "#93000a"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "xl": "64px",
+                "margin-mobile": "20px",
+                "lg": "40px",
+                "xs": "4px",
+                "md": "24px",
+                "base": "8px",
+                "sm": "12px",
+                "gutter": "16px"
+        },
+        "fontFamily": {
+                "label-md": ["Plus Jakarta Sans"],
+                "headline-md": ["Lexend"],
+                "body-lg": ["Plus Jakarta Sans"],
+                "headline-lg": ["Lexend"],
+                "display-xl": ["Lexend"],
+                "label-sm": ["Plus Jakarta Sans"],
+                "body-md": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                "display-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+        }
+      },
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-fill .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant/30">
+<div class="flex justify-between items-center px-gutter py-base w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-gutter">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-high transition-colors p-base rounded-full active:scale-95 transition-transform duration-150" data-icon="menu">menu</button>
+<h1 class="text-headline-md font-headline-md font-bold text-primary">GoalQuiz</h1>
+</div>
+<div class="flex items-center gap-gutter">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-high transition-colors p-base rounded-full active:scale-95 transition-transform duration-150" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<main class="pt-xl pb-xl px-gutter max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mt-lg mb-xl">
+<div class="relative overflow-hidden rounded-xl p-xl flex flex-col md:flex-row items-center justify-between gap-lg bg-primary-container text-on-primary-container shadow-sm">
+<div class="relative z-10 max-w-lg">
+<h2 class="text-display-xl font-display-xl mb-sm">Welcome back, Champ!</h2>
+<p class="text-body-lg font-body-lg mb-md opacity-90">Ready to test your football knowledge and climb the leaderboard? Today's stats are waiting for you.</p>
+<div class="flex gap-sm">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-bold text-label-md hover:bg-on-primary-container transition-all shadow-md">
+                            Play Now
+                        </button>
+<button class="border-2 border-primary text-primary px-lg py-sm rounded-full font-bold text-label-md hover:bg-primary-fixed transition-all">
+                            View Stats
+                        </button>
+</div>
+</div>
+<div class="relative w-full md:w-1/3 aspect-square flex items-center justify-center">
+<img class="w-full h-full object-contain" data-alt="A vibrant 3D digital illustration of a stylized soccer player mid-kick, surrounded by exploding confetti and abstract geometric shapes. The art style is playful and athletic, utilizing a bright palette of sky blue, powder blue, and crisp white to match the sports quiz app theme. The lighting is soft and high-key, creating an energetic and inviting atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6kELaxdiJoO5Q0zYQoCntoIwOFPMRgiwsJtYvI9wGW4qeSLlenCSLxjKNEG03P8rc794QVd2INRF_iGLJtE9AbAlS51mMr93xi3S0pKJPbDOHioTOwoghAFM8hI7hty0HZX-cVkGnBueT7zbQNowpuLD_hsrEtp91UH_Go-6epVhadSTRQR6nGeuL1yfJICD9woBX53MGppHhu_GJNZBDKx9Za7BM4nSg_FM73g5TG3TaLP2L--198dDtSk7sYL8PttqXi7ASDYc"/>
+</div>
+<!-- Abstract Background Shapes -->
+<div class="absolute top-[-20%] right-[-10%] w-xl h-xl bg-white/20 rounded-full blur-3xl"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-lg h-lg bg-secondary-container/30 rounded-full blur-2xl"></div>
+</div>
+</section>
+<!-- Bento Grid: Daily Challenge & Quick Stats -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-md mb-xl">
+<!-- Featured: Daily Challenge -->
+<div class="md:col-span-2 relative group bg-surface-container-lowest rounded-xl p-md shadow-sm border border-outline-variant/30 flex flex-col md:flex-row gap-md overflow-hidden">
+<div class="flex-1">
+<div class="flex items-center gap-xs mb-sm">
+<span class="bg-error text-on-error text-label-sm font-label-sm px-sm py-xs rounded-full">LIVE CHALLENGE</span>
+<span class="text-on-surface-variant text-label-sm font-label-sm">Ends in 04:22:10</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg mb-sm text-on-background">World Cup Heroes</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-md">Test your memory on the greatest moments in World Cup history. 10 questions, 60 seconds.</p>
+<div class="flex items-center gap-md">
+<div class="flex flex-col">
+<span class="text-primary font-bold text-headline-md">5,200</span>
+<span class="text-label-sm text-tertiary">Players today</span>
+</div>
+<div class="h-xl w-[1px] bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="text-primary font-bold text-headline-md">XP x2</span>
+<span class="text-label-sm text-tertiary">Daily Bonus</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/3 h-48 md:h-auto rounded-lg overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A cinematic, wide-angle shot of a majestic soccer stadium filled with a cheering crowd, captured during the golden hour. The sunlight filters through the stadium architecture, creating long shadows and a warm, heroic glow over the pristine green pitch. The scene is rendered in a clean, modern aesthetic with a soft color palette that emphasizes blues and whites, echoing a celebratory and competitive sport mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzts8s5hR_SSpibhnYDY-cf71CpZiAgoxWaP7VbTBjZEHk5-S5tReDnJsQXN6q6hETaFeUFeZEtVatnbPzjAVFLkopXSX5mILUISLCzFSM1AcEg_lFc4eUtfIB0Dgqvj8uwxqlGGg2n2jr5z5MAJm8TrfZgaynaa53yMtY8U2Yg0H8PIuUoEK4uMhzev4su3vxB5O9EzBJ2sGeVo8yEkBSIP5UAKaEKqzbUXQi2etKF60Whq788Wy98_li6lwXVwIlf0PmFoTxPs4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-sm">
+<button class="w-full bg-white text-primary py-sm rounded-lg font-bold text-label-md shadow-lg flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                            Start Now
+                        </button>
+</div>
+</div>
+</div>
+<!-- Profile Summary Card -->
+<div class="bg-surface-container-high rounded-xl p-md flex flex-col justify-between shadow-sm">
+<div class="flex justify-between items-start">
+<div class="w-xl h-xl rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-container text-headline-md font-bold">
+                        JD
+                    </div>
+<div class="text-right">
+<span class="block text-label-sm text-tertiary">Rank</span>
+<span class="text-headline-md font-headline-md text-primary">#142</span>
+</div>
+</div>
+<div class="mt-md">
+<h4 class="text-headline-md font-headline-md text-on-background">Ben Koolen</h4>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-secondary" style="font-size: 16px; font-variation-settings: 'FILL' 1;">military_tech</span>
+<span class="text-label-sm text-secondary font-bold uppercase tracking-wider">PRO LEAGUE</span>
+</div>
+</div>
+<div class="mt-lg space-y-sm">
+<div class="flex justify-between text-label-sm text-on-surface-variant">
+<span class="">XP Progress</span>
+<span class="">840 / 1000</span>
+</div>
+<div class="w-full h-base bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="w-[84%] h-full bg-primary rounded-full transition-all duration-700"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="mb-xl">
+<div class="flex items-center justify-between mb-md">
+<h3 class="text-headline-lg font-headline-lg text-on-background">Quiz Categories</h3>
+<button class="text-primary font-bold text-label-md flex items-center gap-xs hover:underline">
+                    View All Categories <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<!-- Category Card 1 -->
+<div class="group bg-surface-container-lowest rounded-xl p-md border border-outline-variant/30 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center mb-md group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="sports_soccer">sports_soccer</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-on-background mb-xs">Premier League</h4>
+<span class="text-label-sm text-tertiary">124 Quizzes</span>
+</div>
+<!-- Category Card 2 -->
+<div class="group bg-surface-container-lowest rounded-xl p-md border border-outline-variant/30 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-2xl bg-tertiary-fixed flex items-center justify-center mb-md group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary-container text-[32px]" data-icon="public">public</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-on-background mb-xs">World Cup</h4>
+<span class="text-label-sm text-tertiary">86 Quizzes</span>
+</div>
+<!-- Category Card 3 -->
+<div class="group bg-surface-container-lowest rounded-xl p-md border border-outline-variant/30 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-2xl bg-secondary-fixed flex items-center justify-center mb-md group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant text-[32px]" data-icon="quiz">quiz</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-on-background mb-xs">General Knowledge</h4>
+<span class="text-label-sm text-tertiary">210 Quizzes</span>
+</div>
+<!-- Category Card 4 -->
+<div class="group bg-surface-container-lowest rounded-xl p-md border border-outline-variant/30 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-2xl bg-primary-fixed flex items-center justify-center mb-md group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="emoji_events">emoji_events</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-on-background mb-xs">Champions League</h4>
+<span class="text-label-sm text-tertiary">95 Quizzes</span>
+</div>
+</div>
+</section>
+<!-- Stats Section (Asymmetric) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-md items-center">
+<div class="md:col-span-4 bg-primary text-on-primary rounded-xl p-md shadow-lg h-full flex flex-col justify-center">
+<span class="text-label-sm font-bold opacity-80 uppercase tracking-widest mb-sm">Your Streak</span>
+<div class="flex items-baseline gap-xs mb-md">
+<span class="text-[64px] font-bold leading-none">12</span>
+<span class="text-headline-md">Days</span>
+</div>
+<p class="text-body-md opacity-90">Keep it up! Only 3 more days to unlock the 'Elite Striker' badge.</p>
+</div>
+<div class="md:col-span-8 grid grid-cols-2 gap-md">
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant/30">
+<div class="flex items-center gap-sm mb-sm">
+<div class="p-xs bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+</div>
+<span class="text-label-md font-label-md text-on-surface">Accuracy</span>
+</div>
+<p class="text-headline-lg font-headline-lg text-primary">88.4%</p>
+<span class="text-label-sm text-error flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +2.1% this week
+                    </span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant/30">
+<div class="flex items-center gap-sm mb-sm">
+<div class="p-xs bg-tertiary-fixed rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="timer">timer</span>
+</div>
+<span class="text-label-md font-label-md text-on-surface">Avg. Speed</span>
+</div>
+<p class="text-headline-lg font-headline-lg text-on-background">4.2s</p>
+<span class="text-label-sm text-tertiary mt-xs block">Per question</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-xl px-gutter bg-surface pb-safe shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40 border-t border-outline-variant/30">
+<a class="flex flex-col items-center justify-center text-primary font-bold active-nav-fill hover:bg-surface-container transition-colors p-xs rounded-lg active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors p-xs rounded-lg active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="text-label-sm font-label-sm">Leagues</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors p-xs rounded-lg active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="text-label-sm font-label-sm">Stats</span>
+</a>
+</nav>
+<!-- FAB -->
+<button class="fixed bottom-[96px] right-gutter w-xl h-xl bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform active:scale-95 z-50">
+<span class="material-symbols-outlined text-[32px]" data-icon="add" style="font-variation-settings: 'wght' 700;">bolt</span>
+</button>
+</body></html>
